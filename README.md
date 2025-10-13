@@ -1,8 +1,8 @@
-# 🧠 InsightFlow
+# 🧠 Datalyze
 
 **Intelligent Data-Pipeline Visualizer & Auto-EDA Platform**
 
-InsightFlow is an intelligent data-pipeline visualizer that automates exploratory data analysis (EDA) and guided model experimentation. Built using FastAPI, React, D3.js, and scikit-learn — fully containerized and deployable via Docker and AWS ECS.
+Datalyze is an intelligent data-pipeline visualizer that automates exploratory data analysis (EDA) and guided model experimentation. Built using FastAPI, React, D3.js, and scikit-learn — fully containerized and deployable via Docker and AWS ECS.
 
 ## 🚀 Features
 
@@ -84,8 +84,8 @@ InsightFlow is an intelligent data-pipeline visualizer that automates explorator
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-org/insightflow.git
-   cd insightflow
+   git clone https://github.com/your-org/Datalyze.git
+   cd Datalyze
    ```
 
 2. **Backend Setup**
@@ -108,7 +108,7 @@ InsightFlow is an intelligent data-pipeline visualizer that automates explorator
    docker-compose up -d postgres redis
    
    # Or set up PostgreSQL manually
-   createdb insightflow
+   createdb Datalyze
    ```
 
 5. **Environment Configuration**
@@ -140,7 +140,7 @@ InsightFlow is an intelligent data-pipeline visualizer that automates explorator
 ## 📁 Project Structure
 
 ```
-insightflow/
+Datalyze/
 ├── backend/                 # FastAPI backend
 │   ├── app/
 │   │   ├── api/            # API routes
@@ -296,9 +296,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-- **Documentation**: [Wiki](https://github.com/your-org/insightflow/wiki)
-- **Issues**: [GitHub Issues](https://github.com/your-org/insightflow/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-org/insightflow/discussions)
+- **Documentation**: [Wiki](https://github.com/your-org/Datalyze/wiki)
+- **Issues**: [GitHub Issues](https://github.com/your-org/Datalyze/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/your-org/Datalyze/discussions)
 
 ## 🗺️ Roadmap
 
@@ -311,4 +311,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ by the InsightFlow Team**
+**Built with ❤️ by the Datalyze Team**
