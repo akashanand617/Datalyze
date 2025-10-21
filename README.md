@@ -2,7 +2,7 @@
 
 **Intelligent Data-Pipeline Visualizer & Auto-EDA Platform**
 
-Datalyze is an intelligent data-pipeline visualizer that automates exploratory data analysis (EDA) and guided model experimentation. Built using FastAPI, React, D3.js, and scikit-learn — fully containerized and deployable via Docker and AWS ECS.
+Datalyze is an intelligent data-pipeline visualizer that automates exploratory data analysis (EDA) and guided model experimentation. Built using Flask, React, D3.js, and scikit-learn — fully containerized and deployable via Docker and AWS ECS.
 
 ## 🚀 Features
 
@@ -17,7 +17,7 @@ Datalyze is an intelligent data-pipeline visualizer that automates exploratory d
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   React Frontend │    │  FastAPI Backend │    │   PostgreSQL    │
+│   React Frontend │    │  Flask Backend   │    │   PostgreSQL    │
 │   (D3.js viz)   │◄──►│  (Python 3.10+) │◄──►│   (Production)  │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
                               │
@@ -34,8 +34,8 @@ Datalyze is an intelligent data-pipeline visualizer that automates exploratory d
 
 | Component | Library | Purpose |
 |-----------|---------|---------|
-| **Web Framework** | `fastapi` | REST API for uploads, ETL stages, AutoModel endpoints |
-| **Server** | `uvicorn[standard]` | ASGI server for FastAPI |
+| **Web Framework** | `flask` | REST API for uploads, ETL stages, AutoModel endpoints |
+| **Server** | `gunicorn` | WSGI server for Flask |
 | **Async Tasks** | `celery + redis` | Background execution for EDA/AutoModel jobs |
 | **ORM / DB** | `sqlalchemy + psycopg2` | Pipeline metadata, metrics, model logs |
 | **Database** | `PostgreSQL` (prod) / `SQLite` (dev) | Persistent data store |
@@ -121,7 +121,7 @@ Datalyze is an intelligent data-pipeline visualizer that automates exploratory d
    ```bash
    # Terminal 1: Backend
    cd backend
-   uvicorn app.main:app --reload
+   python app.py
    
    # Terminal 2: Frontend
    cd frontend
@@ -134,14 +134,14 @@ Datalyze is an intelligent data-pipeline visualizer that automates exploratory d
 
 7. **Access the Application**
    - Frontend: http://localhost:3000
-   - Backend API: http://localhost:8000
-   - API Docs: http://localhost:8000/docs
+   - Backend API: http://localhost:5000
+   - API Docs: http://localhost:5000/docs
 
 ## 📁 Project Structure
 
 ```
 Datalyze/
-├── backend/                 # FastAPI backend
+├── backend/                 # Flask backend
 │   ├── app/
 │   │   ├── api/            # API routes
 │   │   ├── core/           # Core configuration
@@ -178,7 +178,7 @@ cd backend
 pip install -r requirements.txt
 
 # Run with hot reload
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+python app.py
 
 # Run tests
 pytest
@@ -244,8 +244,8 @@ docker-compose -f docker-compose.prod.yml build
 ## 📊 API Documentation
 
 Once the backend is running, visit:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+- **API Documentation**: http://localhost:5000/docs
+- **Health Check**: http://localhost:5000/health
 
 ### Key Endpoints
 
