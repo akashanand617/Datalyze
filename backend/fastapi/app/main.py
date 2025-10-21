@@ -5,8 +5,8 @@ from datetime import datetime
 import uvicorn
 
 # Import API routers
-from app.api import health, uploads, pipelines, models, visualizations
-from app.core.config import settings
+from api import health, uploads, pipelines, models, visualizations
+from core.config import settings
 
 # Create FastAPI instance
 app = FastAPI(
